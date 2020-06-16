@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Backend.Services.UserServices;
 using MaterialSkin.Controls;
@@ -16,6 +17,7 @@ namespace DesktopApp.Forms.MenuForms.User
     public partial class UserForm : MaterialForm
     {
         private DesingerService desingerService;
+        private MainUserService mainUser;
         public UserForm()
         {
             InitializeComponent();
@@ -23,12 +25,24 @@ namespace DesktopApp.Forms.MenuForms.User
             desingerService.AddFormToDesinger(this);
             desingerService.AddPanelToChangeColor(passwordPanel);
             desingerService.AddPanelToChangeColor(accoutnDeletePanel);
-            desingerService.AddPanelToChangeColor(userStatsPanel);
+            desingerService.AddPanelToChangeColor(panel1);
+            desingerService.AddPanelToChangeColor(panel2);
+            desingerService.AddPanelToChangeColor(panel3);
+            desingerService.AddPanelToChangeColor(userInfoPanel);
 
-            UserService userService = UserServiceImpl.GetInstance();
+            mainUser = MainUserServiceImpl.GetInstance();
+            SetLabels();
+        }
 
-            emailField.Text = userService.GetUserEmail();
-            tokenField.Text = userService.GetUserToken();
+        private void SetLabels()
+        {
+
+            if (mainUser.GetUserRole() != Role.DEFAULT)
+            {
+                emailLabel.Text = "Adres: "+mainUser.GetUserEmail();
+                roleLabel.Text = "Poziom uprawnień: "+mainUser.GetUserRole();
+            }
+           
         }
     }
 }

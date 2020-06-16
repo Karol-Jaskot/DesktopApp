@@ -42,12 +42,20 @@
             this.refreshNewsListButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.newsListButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.seancesTab = new System.Windows.Forms.TabPage();
+            this.addSeanceButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.seancePanel = new System.Windows.Forms.Panel();
+            this.refreshSeanseListButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.seanceListButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.moviesTab = new System.Windows.Forms.TabPage();
             this.addMoviesButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.moviesPanel = new System.Windows.Forms.Panel();
             this.refreshMoviesListButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.moviesListbutton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.roomsTab = new System.Windows.Forms.TabPage();
+            this.addHallButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.hallsPanel = new System.Windows.Forms.Panel();
+            this.refreshHallsButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.hallsListButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.usersTab = new System.Windows.Forms.TabPage();
             this.usersPanel = new System.Windows.Forms.Panel();
             this.refreshUsersListButton = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -55,13 +63,16 @@
             this.menuPanel = new System.Windows.Forms.Panel();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.mainPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
             this.mainMenu.SuspendLayout();
             this.seanceTab.SuspendLayout();
             this.checkTicketPanel.SuspendLayout();
             this.newsTab.SuspendLayout();
+            this.seancesTab.SuspendLayout();
             this.moviesTab.SuspendLayout();
+            this.roomsTab.SuspendLayout();
             this.usersTab.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.SuspendLayout();
@@ -117,6 +128,7 @@
             // checkTicketPanel
             // 
             this.checkTicketPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.checkTicketPanel.Controls.Add(this.materialLabel3);
             this.checkTicketPanel.Controls.Add(this.chceckTicketButton);
             this.checkTicketPanel.Controls.Add(this.ticketNumberField);
             this.checkTicketPanel.Controls.Add(this.materialLabel2);
@@ -143,7 +155,7 @@
             // 
             this.ticketNumberField.Depth = 0;
             this.ticketNumberField.Hint = "";
-            this.ticketNumberField.Location = new System.Drawing.Point(182, 49);
+            this.ticketNumberField.Location = new System.Drawing.Point(127, 53);
             this.ticketNumberField.MouseState = MaterialSkin.MouseState.HOVER;
             this.ticketNumberField.Name = "ticketNumberField";
             this.ticketNumberField.PasswordChar = '\0';
@@ -163,9 +175,8 @@
             this.materialLabel2.Location = new System.Drawing.Point(60, 53);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(99, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(0, 19);
             this.materialLabel2.TabIndex = 0;
-            this.materialLabel2.Text = "Numer biletu:";
             // 
             // newsTab
             // 
@@ -215,7 +226,7 @@
             this.refreshNewsListButton.Primary = true;
             this.refreshNewsListButton.Size = new System.Drawing.Size(160, 44);
             this.refreshNewsListButton.TabIndex = 1;
-            this.refreshNewsListButton.Text = "Odświerz liste";
+            this.refreshNewsListButton.Text = "Odśwież liste";
             this.refreshNewsListButton.UseVisualStyleBackColor = true;
             this.refreshNewsListButton.Click += new System.EventHandler(this.refreshNewsListButton_Click);
             // 
@@ -236,6 +247,10 @@
             // 
             // seancesTab
             // 
+            this.seancesTab.Controls.Add(this.addSeanceButton);
+            this.seancesTab.Controls.Add(this.seancePanel);
+            this.seancesTab.Controls.Add(this.refreshSeanseListButton);
+            this.seancesTab.Controls.Add(this.seanceListButton);
             this.seancesTab.Location = new System.Drawing.Point(4, 22);
             this.seancesTab.Name = "seancesTab";
             this.seancesTab.Padding = new System.Windows.Forms.Padding(3);
@@ -243,6 +258,59 @@
             this.seancesTab.TabIndex = 2;
             this.seancesTab.Text = "Seanse";
             this.seancesTab.UseVisualStyleBackColor = true;
+            // 
+            // addSeanceButton
+            // 
+            this.addSeanceButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addSeanceButton.Depth = 0;
+            this.addSeanceButton.Location = new System.Drawing.Point(203, 13);
+            this.addSeanceButton.Margin = new System.Windows.Forms.Padding(10);
+            this.addSeanceButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addSeanceButton.Name = "addSeanceButton";
+            this.addSeanceButton.Primary = true;
+            this.addSeanceButton.Size = new System.Drawing.Size(160, 44);
+            this.addSeanceButton.TabIndex = 6;
+            this.addSeanceButton.Text = "Dodaj seans";
+            this.addSeanceButton.UseVisualStyleBackColor = true;
+            this.addSeanceButton.Click += new System.EventHandler(this.addSeanceButton_Click);
+            // 
+            // seancePanel
+            // 
+            this.seancePanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.seancePanel.Location = new System.Drawing.Point(3, 56);
+            this.seancePanel.Name = "seancePanel";
+            this.seancePanel.Size = new System.Drawing.Size(786, 455);
+            this.seancePanel.TabIndex = 7;
+            // 
+            // refreshSeanseListButton
+            // 
+            this.refreshSeanseListButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshSeanseListButton.Depth = 0;
+            this.refreshSeanseListButton.Location = new System.Drawing.Point(617, 13);
+            this.refreshSeanseListButton.Margin = new System.Windows.Forms.Padding(10);
+            this.refreshSeanseListButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.refreshSeanseListButton.Name = "refreshSeanseListButton";
+            this.refreshSeanseListButton.Primary = true;
+            this.refreshSeanseListButton.Size = new System.Drawing.Size(160, 44);
+            this.refreshSeanseListButton.TabIndex = 5;
+            this.refreshSeanseListButton.Text = "Odśwież liste";
+            this.refreshSeanseListButton.UseVisualStyleBackColor = true;
+            this.refreshSeanseListButton.Click += new System.EventHandler(this.refreshSeanseListButton_Click);
+            // 
+            // seanceListButton
+            // 
+            this.seanceListButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.seanceListButton.Depth = 0;
+            this.seanceListButton.Location = new System.Drawing.Point(15, 13);
+            this.seanceListButton.Margin = new System.Windows.Forms.Padding(10);
+            this.seanceListButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.seanceListButton.Name = "seanceListButton";
+            this.seanceListButton.Primary = true;
+            this.seanceListButton.Size = new System.Drawing.Size(170, 44);
+            this.seanceListButton.TabIndex = 4;
+            this.seanceListButton.Text = "Lista seansów";
+            this.seanceListButton.UseVisualStyleBackColor = true;
+            this.seanceListButton.Click += new System.EventHandler(this.seanceListButton_Click);
             // 
             // moviesTab
             // 
@@ -262,7 +330,7 @@
             // 
             this.addMoviesButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addMoviesButton.Depth = 0;
-            this.addMoviesButton.Location = new System.Drawing.Point(203, 8);
+            this.addMoviesButton.Location = new System.Drawing.Point(203, 13);
             this.addMoviesButton.Margin = new System.Windows.Forms.Padding(10);
             this.addMoviesButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.addMoviesButton.Name = "addMoviesButton";
@@ -285,14 +353,14 @@
             // 
             this.refreshMoviesListButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refreshMoviesListButton.Depth = 0;
-            this.refreshMoviesListButton.Location = new System.Drawing.Point(617, 8);
+            this.refreshMoviesListButton.Location = new System.Drawing.Point(617, 13);
             this.refreshMoviesListButton.Margin = new System.Windows.Forms.Padding(10);
             this.refreshMoviesListButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.refreshMoviesListButton.Name = "refreshMoviesListButton";
             this.refreshMoviesListButton.Primary = true;
             this.refreshMoviesListButton.Size = new System.Drawing.Size(160, 44);
             this.refreshMoviesListButton.TabIndex = 5;
-            this.refreshMoviesListButton.Text = "Odświerz liste";
+            this.refreshMoviesListButton.Text = "Odśwież liste";
             this.refreshMoviesListButton.UseVisualStyleBackColor = true;
             this.refreshMoviesListButton.Click += new System.EventHandler(this.refreshMoviesListButton_Click);
             // 
@@ -300,7 +368,7 @@
             // 
             this.moviesListbutton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.moviesListbutton.Depth = 0;
-            this.moviesListbutton.Location = new System.Drawing.Point(15, 8);
+            this.moviesListbutton.Location = new System.Drawing.Point(13, 13);
             this.moviesListbutton.Margin = new System.Windows.Forms.Padding(10);
             this.moviesListbutton.MouseState = MaterialSkin.MouseState.HOVER;
             this.moviesListbutton.Name = "moviesListbutton";
@@ -313,6 +381,10 @@
             // 
             // roomsTab
             // 
+            this.roomsTab.Controls.Add(this.addHallButton);
+            this.roomsTab.Controls.Add(this.hallsPanel);
+            this.roomsTab.Controls.Add(this.refreshHallsButton);
+            this.roomsTab.Controls.Add(this.hallsListButton);
             this.roomsTab.Location = new System.Drawing.Point(4, 22);
             this.roomsTab.Name = "roomsTab";
             this.roomsTab.Padding = new System.Windows.Forms.Padding(3);
@@ -320,6 +392,59 @@
             this.roomsTab.TabIndex = 4;
             this.roomsTab.Text = "Sale";
             this.roomsTab.UseVisualStyleBackColor = true;
+            // 
+            // addHallButton
+            // 
+            this.addHallButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addHallButton.Depth = 0;
+            this.addHallButton.Location = new System.Drawing.Point(205, 13);
+            this.addHallButton.Margin = new System.Windows.Forms.Padding(10);
+            this.addHallButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addHallButton.Name = "addHallButton";
+            this.addHallButton.Primary = true;
+            this.addHallButton.Size = new System.Drawing.Size(160, 44);
+            this.addHallButton.TabIndex = 6;
+            this.addHallButton.Text = "Dodaj sale";
+            this.addHallButton.UseVisualStyleBackColor = true;
+            this.addHallButton.Click += new System.EventHandler(this.addHallButton_Click);
+            // 
+            // hallsPanel
+            // 
+            this.hallsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.hallsPanel.Location = new System.Drawing.Point(3, 56);
+            this.hallsPanel.Name = "hallsPanel";
+            this.hallsPanel.Size = new System.Drawing.Size(786, 455);
+            this.hallsPanel.TabIndex = 7;
+            // 
+            // refreshHallsButton
+            // 
+            this.refreshHallsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshHallsButton.Depth = 0;
+            this.refreshHallsButton.Location = new System.Drawing.Point(617, 13);
+            this.refreshHallsButton.Margin = new System.Windows.Forms.Padding(10);
+            this.refreshHallsButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.refreshHallsButton.Name = "refreshHallsButton";
+            this.refreshHallsButton.Primary = true;
+            this.refreshHallsButton.Size = new System.Drawing.Size(160, 44);
+            this.refreshHallsButton.TabIndex = 5;
+            this.refreshHallsButton.Text = "Odśwież liste";
+            this.refreshHallsButton.UseVisualStyleBackColor = true;
+            this.refreshHallsButton.Click += new System.EventHandler(this.refreshHallsButton_Click);
+            // 
+            // hallsListButton
+            // 
+            this.hallsListButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hallsListButton.Depth = 0;
+            this.hallsListButton.Location = new System.Drawing.Point(15, 13);
+            this.hallsListButton.Margin = new System.Windows.Forms.Padding(10);
+            this.hallsListButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.hallsListButton.Name = "hallsListButton";
+            this.hallsListButton.Primary = true;
+            this.hallsListButton.Size = new System.Drawing.Size(170, 44);
+            this.hallsListButton.TabIndex = 4;
+            this.hallsListButton.Text = "Lista sal";
+            this.hallsListButton.UseVisualStyleBackColor = true;
+            this.hallsListButton.Click += new System.EventHandler(this.hallsListButton_Click);
             // 
             // usersTab
             // 
@@ -353,7 +478,7 @@
             this.refreshUsersListButton.Primary = true;
             this.refreshUsersListButton.Size = new System.Drawing.Size(160, 44);
             this.refreshUsersListButton.TabIndex = 5;
-            this.refreshUsersListButton.Text = "Odświerz liste";
+            this.refreshUsersListButton.Text = "Odśwież liste";
             this.refreshUsersListButton.UseVisualStyleBackColor = true;
             this.refreshUsersListButton.Click += new System.EventHandler(this.refreshUsersListButton_Click);
             // 
@@ -406,6 +531,19 @@
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "Panel admina";
             // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(263, 31);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(218, 19);
+            this.materialLabel3.TabIndex = 2;
+            this.materialLabel3.Text = "Element w fazie projektowania!";
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,7 +560,9 @@
             this.checkTicketPanel.ResumeLayout(false);
             this.checkTicketPanel.PerformLayout();
             this.newsTab.ResumeLayout(false);
+            this.seancesTab.ResumeLayout(false);
             this.moviesTab.ResumeLayout(false);
+            this.roomsTab.ResumeLayout(false);
             this.usersTab.ResumeLayout(false);
             this.menuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -435,11 +575,9 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.Panel contentPanel;
         private System.Windows.Forms.Panel menuPanel;
-        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private MaterialSkin.Controls.MaterialTabControl mainMenu;
         private System.Windows.Forms.TabPage newsTab;
         private System.Windows.Forms.TabPage seancesTab;
-        private System.Windows.Forms.TabPage seanceTab;
         private System.Windows.Forms.TabPage moviesTab;
         private System.Windows.Forms.TabPage roomsTab;
         private System.Windows.Forms.TabPage usersTab;
@@ -447,10 +585,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton addNewsButton;
         private MaterialSkin.Controls.MaterialRaisedButton refreshNewsListButton;
         private MaterialSkin.Controls.MaterialRaisedButton newsListButton;
-        private System.Windows.Forms.Panel checkTicketPanel;
-        private MaterialSkin.Controls.MaterialSingleLineTextField ticketNumberField;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialRaisedButton chceckTicketButton;
         private System.Windows.Forms.Panel usersPanel;
         private MaterialSkin.Controls.MaterialRaisedButton refreshUsersListButton;
         private MaterialSkin.Controls.MaterialRaisedButton usersListButton;
@@ -458,5 +592,20 @@
         private System.Windows.Forms.Panel moviesPanel;
         private MaterialSkin.Controls.MaterialRaisedButton refreshMoviesListButton;
         private MaterialSkin.Controls.MaterialRaisedButton moviesListbutton;
+        private MaterialSkin.Controls.MaterialRaisedButton addHallButton;
+        private System.Windows.Forms.Panel hallsPanel;
+        private MaterialSkin.Controls.MaterialRaisedButton refreshHallsButton;
+        private MaterialSkin.Controls.MaterialRaisedButton hallsListButton;
+        private MaterialSkin.Controls.MaterialRaisedButton addSeanceButton;
+        private System.Windows.Forms.Panel seancePanel;
+        private MaterialSkin.Controls.MaterialRaisedButton refreshSeanseListButton;
+        private MaterialSkin.Controls.MaterialRaisedButton seanceListButton;
+        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
+        private System.Windows.Forms.Panel checkTicketPanel;
+        private MaterialSkin.Controls.MaterialRaisedButton chceckTicketButton;
+        private MaterialSkin.Controls.MaterialSingleLineTextField ticketNumberField;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.TabPage seanceTab;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
     }
 }

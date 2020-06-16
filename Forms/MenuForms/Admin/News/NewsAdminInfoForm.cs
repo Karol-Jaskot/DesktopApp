@@ -37,6 +37,7 @@ namespace DesktopApp.Forms.MenuForms.Admin.News
             idLabel.Text = "Numer: " + article.GetId();
             titleLabel.Text = article.GetTitle();
             descriptionLabel.Text = article.GetDescription();
+            dateLabel.Text = article.GetDate();
             if (article.GetStatus() == Status.Active)
                 statusLabel.Text = "Aktywne";
             else

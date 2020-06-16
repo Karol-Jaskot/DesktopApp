@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.banButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.changeRoleButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.idLabel = new MaterialSkin.Controls.MaterialLabel();
             this.roleLabel = new MaterialSkin.Controls.MaterialLabel();
             this.emailLabel = new MaterialSkin.Controls.MaterialLabel();
@@ -38,6 +40,8 @@
             // contentPanel
             // 
             this.contentPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.contentPanel.Controls.Add(this.banButton);
+            this.contentPanel.Controls.Add(this.changeRoleButton);
             this.contentPanel.Controls.Add(this.idLabel);
             this.contentPanel.Controls.Add(this.roleLabel);
             this.contentPanel.Controls.Add(this.emailLabel);
@@ -46,6 +50,34 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(760, 60);
             this.contentPanel.TabIndex = 1;
+            // 
+            // banButton
+            // 
+            this.banButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.banButton.Depth = 0;
+            this.banButton.Location = new System.Drawing.Point(655, 28);
+            this.banButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.banButton.Name = "banButton";
+            this.banButton.Primary = true;
+            this.banButton.Size = new System.Drawing.Size(102, 29);
+            this.banButton.TabIndex = 6;
+            this.banButton.Text = "Banuj!";
+            this.banButton.UseVisualStyleBackColor = true;
+            this.banButton.Click += new System.EventHandler(this.banButton_Click);
+            // 
+            // changeRoleButton
+            // 
+            this.changeRoleButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.changeRoleButton.Depth = 0;
+            this.changeRoleButton.Location = new System.Drawing.Point(331, 6);
+            this.changeRoleButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.changeRoleButton.Name = "changeRoleButton";
+            this.changeRoleButton.Primary = true;
+            this.changeRoleButton.Size = new System.Drawing.Size(137, 26);
+            this.changeRoleButton.TabIndex = 5;
+            this.changeRoleButton.Text = "Nadaj admina";
+            this.changeRoleButton.UseVisualStyleBackColor = true;
+            this.changeRoleButton.Click += new System.EventHandler(this.changeRoleButton_Click);
             // 
             // idLabel
             // 
@@ -66,7 +98,7 @@
             this.roleLabel.Depth = 0;
             this.roleLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.roleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.roleLabel.Location = new System.Drawing.Point(531, 9);
+            this.roleLabel.Location = new System.Drawing.Point(219, 9);
             this.roleLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.roleLabel.Name = "roleLabel";
             this.roleLabel.Size = new System.Drawing.Size(34, 19);
@@ -106,5 +138,7 @@
         private MaterialSkin.Controls.MaterialLabel idLabel;
         private MaterialSkin.Controls.MaterialLabel roleLabel;
         private MaterialSkin.Controls.MaterialLabel emailLabel;
+        private MaterialSkin.Controls.MaterialRaisedButton changeRoleButton;
+        private MaterialSkin.Controls.MaterialRaisedButton banButton;
     }
 }

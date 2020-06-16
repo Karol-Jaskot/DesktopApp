@@ -1,7 +1,4 @@
-﻿using DesktopApp.Backend.Configuration;
-using DesktopApp.Backend.Controllers.Connection;
-using DesktopApp.Backend.Data;
-
+﻿using DesktopApp.Backend.Controllers.Connection.StandardConnections;
 
 namespace DesktopApp.Backend.Services.AccessServices.LoginServices
 {
@@ -21,7 +18,7 @@ namespace DesktopApp.Backend.Services.AccessServices.LoginServices
         public bool LoginNewUser()
         {
             if (CheckUserData())
-                return GetConnectionController().Singin(GetAuthData());
+                return GetConnectionController().SingIn(GetAuthData());
 
             return false;
         }

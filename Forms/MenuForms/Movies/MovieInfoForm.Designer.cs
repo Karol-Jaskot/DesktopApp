@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.commentButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.directLabel = new MaterialSkin.Controls.MaterialLabel();
             this.descriptionLabel = new MaterialSkin.Controls.MaterialLabel();
             this.titleLabel = new MaterialSkin.Controls.MaterialLabel();
@@ -38,14 +39,32 @@
             // contentPanel
             // 
             this.contentPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.contentPanel.Controls.Add(this.commentButton);
             this.contentPanel.Controls.Add(this.directLabel);
             this.contentPanel.Controls.Add(this.descriptionLabel);
             this.contentPanel.Controls.Add(this.titleLabel);
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(0, 0);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(776, 60);
+            this.contentPanel.Size = new System.Drawing.Size(762, 60);
             this.contentPanel.TabIndex = 2;
+            // 
+            // commentButton
+            // 
+            this.commentButton.AutoSize = true;
+            this.commentButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.commentButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.commentButton.Depth = 0;
+            this.commentButton.Location = new System.Drawing.Point(647, 15);
+            this.commentButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.commentButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.commentButton.Name = "commentButton";
+            this.commentButton.Primary = false;
+            this.commentButton.Size = new System.Drawing.Size(102, 36);
+            this.commentButton.TabIndex = 3;
+            this.commentButton.Text = "Komentarze";
+            this.commentButton.UseVisualStyleBackColor = true;
+            this.commentButton.Click += new System.EventHandler(this.commentButton_Click);
             // 
             // directLabel
             // 
@@ -90,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 60);
+            this.ClientSize = new System.Drawing.Size(762, 60);
             this.Controls.Add(this.contentPanel);
             this.Name = "MovieInfoForm";
             this.Text = "MovieInfoForm";
@@ -106,5 +125,6 @@
         private MaterialSkin.Controls.MaterialLabel directLabel;
         private MaterialSkin.Controls.MaterialLabel descriptionLabel;
         private MaterialSkin.Controls.MaterialLabel titleLabel;
+        private MaterialSkin.Controls.MaterialFlatButton commentButton;
     }
 }

@@ -40,6 +40,7 @@ namespace DesktopApp.MainForm
             this.seancebutton = new MaterialSkin.Controls.MaterialFlatButton();
             this.newsButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.logoPanel = new System.Windows.Forms.Panel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.userEmailLabel = new MaterialSkin.Controls.MaterialLabel();
             this.logoutButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.loginButton = new MaterialSkin.Controls.MaterialFlatButton();
@@ -200,12 +201,28 @@ namespace DesktopApp.MainForm
             // 
             // logoPanel
             // 
+            this.logoPanel.Controls.Add(this.materialLabel1);
             this.logoPanel.Controls.Add(this.userEmailLabel);
             this.logoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.logoPanel.Location = new System.Drawing.Point(0, 0);
             this.logoPanel.Name = "logoPanel";
             this.logoPanel.Size = new System.Drawing.Size(200, 120);
             this.logoPanel.TabIndex = 3;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(0, 0);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(47, 19);
+            this.materialLabel1.TabIndex = 1;
+            this.materialLabel1.Text = "Email";
+            this.materialLabel1.Visible = false;
             // 
             // userEmailLabel
             // 
@@ -331,5 +348,6 @@ namespace DesktopApp.MainForm
         private MaterialSkin.Controls.MaterialFlatButton userButton;
         private MaterialSkin.Controls.MaterialFlatButton moviesButton;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

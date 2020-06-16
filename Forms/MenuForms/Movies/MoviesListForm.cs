@@ -33,7 +33,7 @@ namespace DesktopApp.Forms.MenuForms.Movies
             moviesService = MoviesServiceImpl.GetService();
             listFormService = new ListFormService();
 
-            DownloadArticlesList();
+            DownloadMoviesList();
             listFormService.SetControlButtonsAndLabel(previusPageButton, nextPageButton, pageNumberLabel);
             listFormService.SetInfoPanel(infoLabel);
 
@@ -67,7 +67,7 @@ namespace DesktopApp.Forms.MenuForms.Movies
         }
 
 
-        private void DownloadArticlesList()
+        private void DownloadMoviesList()
         {
             movies = moviesService.GetMoviesList();
         }

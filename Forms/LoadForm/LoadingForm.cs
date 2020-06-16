@@ -9,13 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopApp.Backend.Controllers.Connection;
+using DesktopApp.Backend.Controllers.Connection.StandardConnections;
 using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.AdminServices.ArticleServices;
+using DesktopApp.Backend.Services.AdminServices.HallsServices;
 using DesktopApp.Backend.Services.AdminServices.MoviesServices;
+using DesktopApp.Backend.Services.AdminServices.SeanceServices;
 using DesktopApp.Backend.Services.AdminServices.UsersServices;
 using DesktopApp.Backend.Services.DataServices.ArticleServices;
+using DesktopApp.Backend.Services.DataServices.HallsServices;
 using DesktopApp.Backend.Services.DataServices.MoviesServices;
+using DesktopApp.Backend.Services.DataServices.SeanceServices;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Backend.Services.SaveServices;
 using DesktopApp.Backend.Services.UserServices;
@@ -56,21 +61,29 @@ namespace DesktopApp.Forms.LoadForm
         {
             SetProgressBar(10);
 
-            SetText("Pobieranie ogłoszeń");
-            ArticleService articleService = ArticleServiceImpl.GetService();
+            SetText("Pobieranie ogłoszeń...");
+            ArticleServiceImpl.GetService();
+            SetProgressBar(20);
+
+            SetText("Pobieranie listy filmów...");
+            MoviesServiceImpl.GetService();
             SetProgressBar(40);
 
-            SetText("Pobieranie listy filmów");
-            MoviesService moviesService = MoviesServiceImpl.GetService();
-            SetProgressBar(70);
+            SetText("Pobieranie listy sal kinowych...");
+            HallsServiceImpl.GetService();
+            SetProgressBar(60);
 
-            SetText("Sprawdzanie konta użytkownika");
+            SetText("Pobieranie listy seansów...");
+            SeanceServiceImpl.GetService();
+            SetProgressBar(80);
+
+            SetText("Sprawdzanie konta użytkownika...");
             if(programStart==true)
                 LoginUserFromData();
             SetProgressBar(100);
 
-            UserService userService = UserServiceImpl.GetInstance();
-            Role role = userService.GetUserRole();
+            MainUserService mainUserService = MainUserServiceImpl.GetInstance();
+            Role role = mainUserService.GetUserRole();
             if (role == Role.CUSTOMER)
                 DownloadDataForCustomer();
             else if (role== Role.ADMIN)
@@ -89,16 +102,24 @@ namespace DesktopApp.Forms.LoadForm
         {
             SetProgressBar(10);
 
-            SetText("Pobieranie listy ogłoszeń dla adminstratora");
-            ArticleAdminService articleAdmin = ArticleAdminServiceImpl.GetService();
+            SetText("Pobieranie listy ogłoszeń dla adminstratora...");
+            ArticleAdminServiceImpl.GetService();
+            SetProgressBar(20);
+
+            SetText("Pobieranie listy filmów dla administratora...");
+            MoviesAdminServiceImpl.GetService();
             SetProgressBar(40);
 
-            SetText("Pobieranie listy filmów dla administratora");
-            MoviesAdminService moviesAdmin = MoviesAdminServiceImpl.GetService();
-            SetProgressBar(70);
+            SetText("Pobieranie listy seansów dla administratora...");
+            SeanceAdminServiceImpl.GetService();
+            SetProgressBar(60);
 
-            SetText("Pobieranie listy użytkowników dla administratora");
-            UsersService usersService = UsersServiceImpl.GetService();
+            SetText("Pobieranie listy sal dla administratora...");
+            HallsAdminServiceImpl.GetService();
+            SetProgressBar(80);
+
+            SetText("Pobieranie listy użytkowników dla administratora...");
+            UsersServiceImpl.GetService();
             SetProgressBar(100);
         }
 
@@ -128,7 +149,7 @@ namespace DesktopApp.Forms.LoadForm
             if (email.Length > 3)
             {
                 ConnectionController connection = ConnectionControllerImpl.GetController();
-                connection.Singin(SaveService.GetUser());
+                connection.SingIn(SaveService.GetUser());
             }
         }
 

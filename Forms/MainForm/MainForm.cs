@@ -1,34 +1,29 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
-using DesktopApp.Backend.Controllers.Connection;
 using DesktopApp.Backend.Controllers.ContentPanel;
 using DesktopApp.Backend.Controllers.Forms;
 using DesktopApp.Backend.Data;
 using DesktopApp.Backend.Services.DesingerServices;
 using DesktopApp.Backend.Services.UserServices;
-using DesktopApp.Forms.LoadForm;
-using DesktopApp.Forms.MenuForms.Admin.Users;
-using DesktopApp.Forms.Notification;
-using DesktopApp.Properties;
 using MaterialSkin.Controls;
 
 namespace DesktopApp.MainForm
 {
     public partial class MainForm : MaterialForm
     {
-        private DesingerService desingerService;
-        private ContentPanelController contentPanelController;
+        private DesingerService desinger;
+        private ContentPanelController content;
 
         public MainForm()
         {
             InitializeComponent();
-            desingerService = DesingerServiceImpl.GetInstance();
-            desingerService.AddFormToDesinger(this);
-            desingerService.AddPanelToChangeColor(menuPanel);
+            desinger = DesingerServiceImpl.GetInstance();
+            desinger.AddFormToDesinger(this);
+            desinger.AddPanelToChangeColor(menuPanel);
+            desinger.AddPanelToChangeColor(logoPanel);
 
-            contentPanelController = ContentPanelControllerImpl.CreateController(contentPanel);
-            contentPanelController.OpenNewsForm();
+            content = ContentPanelControllerImpl.CreateController(contentPanel);
+            content.OpenNewsForm();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -42,14 +37,14 @@ namespace DesktopApp.MainForm
             DialogResult dialog = LogoutDialog();
             if (dialog == DialogResult.Yes)
             {
-                UserService userService = UserServiceImpl.GetInstance();
-                userService.RemoveUser();
+                MainUserService mainUserService = MainUserServiceImpl.GetInstance();
+                mainUserService.RemoveUser();
             }
         }
 
         public void SetUserRole(Role role)
         {
-            contentPanelController.OpenNewsForm();
+            content.OpenNewsForm();
             if (role == Role.CUSTOMER)
             {
                 StandardUserSetting();
@@ -95,45 +90,45 @@ namespace DesktopApp.MainForm
 
         private string GetUserEmailFromService()
         {
-            UserService userService = UserServiceImpl.GetInstance();
-            return userService.GetUserEmail();
+            MainUserService mainUserService = MainUserServiceImpl.GetInstance();
+            return mainUserService.GetUserEmail();
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
         {
-            contentPanelController.OpenSettingForm();
+            content.OpenSettingForm();
         }
 
         private void priceButton_Click(object sender, EventArgs e)
         {
-            contentPanelController.OpenPriceForm();
+            content.OpenPriceForm();
             
         }
 
         private void newsButton_Click(object sender, EventArgs e)
         {
-            contentPanelController.OpenNewsForm();
+            content.OpenNewsForm();
         }
 
         private void seancebutton_Click(object sender, EventArgs e)
         {
-            contentPanelController.OpenSeanceForm();
+            content.OpenSeanceForm();
         }
 
         private void userButton_Click(object sender, EventArgs e)
         {
 
-            contentPanelController.OpenUserForm();
+            content.OpenUserForm();
         }
 
         private void adminButton_Click(object sender, EventArgs e)
         {
-         contentPanelController.OpenAdminForms();   
+         content.OpenAdminForms();   
         }
 
         private void moviesButton_Click(object sender, EventArgs e)
         {
-            contentPanelController.OpenMoviesForm();
+            content.OpenMoviesForm();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
